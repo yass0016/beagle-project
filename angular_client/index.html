@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="beagle" ng-cloak>
+  <head>
+    <title>Beagle</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container" ng-controller="mainController">
+      <h3>List of Messages:</h3>
+
+      <div ng-repeat="item in list" class="panel panel-default">
+        <div class="panel-body">
+          <h4>{{ "Text: " + item.text }}</h4>
+          <button
+            class="btn btn-warning pull-right"
+            ng-click="delete(item._id)"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Socekt IO Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+
+    <!-- Load the AngularJS library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.10/angular.min.js"></script>
+
+    <script src="app.js"></script>
+    <script src="services.js"></script>
+  </body>
+</html>
